@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		096D2A81123EE6280069A745 /* Fullscreen.mm in Sources */ = {isa = PBXBuildFile; fileRef = 096D2A79123EE6280069A745 /* Fullscreen.mm */; };
-		096D2A82123EE6280069A745 /* FullscreenWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 096D2A7B123EE6280069A745 /* FullscreenWindow.m */; };
 		096D2A83123EE6280069A745 /* JRSwizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = 096D2A7D123EE6280069A745 /* JRSwizzle.m */; };
 		096D2A84123EE6280069A745 /* NSWindow+Fullscreen.m in Sources */ = {isa = PBXBuildFile; fileRef = 096D2A7F123EE6280069A745 /* NSWindow+Fullscreen.m */; };
 		8D5B49B0048680CD000E48DA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C167DFE841241C02AAC07 /* InfoPlist.strings */; };
@@ -21,8 +20,6 @@
 		089C167FFE841241C02AAC07 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		096D2A78123EE6280069A745 /* Fullscreen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Fullscreen.h; path = src/Fullscreen.h; sourceTree = "<group>"; };
 		096D2A79123EE6280069A745 /* Fullscreen.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = Fullscreen.mm; path = src/Fullscreen.mm; sourceTree = "<group>"; };
-		096D2A7A123EE6280069A745 /* FullscreenWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FullscreenWindow.h; path = src/FullscreenWindow.h; sourceTree = "<group>"; };
-		096D2A7B123EE6280069A745 /* FullscreenWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FullscreenWindow.m; path = src/FullscreenWindow.m; sourceTree = "<group>"; };
 		096D2A7C123EE6280069A745 /* JRSwizzle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JRSwizzle.h; path = src/JRSwizzle.h; sourceTree = "<group>"; };
 		096D2A7D123EE6280069A745 /* JRSwizzle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JRSwizzle.m; path = src/JRSwizzle.m; sourceTree = "<group>"; };
 		096D2A7E123EE6280069A745 /* NSWindow+Fullscreen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSWindow+Fullscreen.h"; path = "src/NSWindow+Fullscreen.h"; sourceTree = "<group>"; };
@@ -82,8 +79,6 @@
 			children = (
 				096D2A78123EE6280069A745 /* Fullscreen.h */,
 				096D2A79123EE6280069A745 /* Fullscreen.mm */,
-				096D2A7A123EE6280069A745 /* FullscreenWindow.h */,
-				096D2A7B123EE6280069A745 /* FullscreenWindow.m */,
 				096D2A7C123EE6280069A745 /* JRSwizzle.h */,
 				096D2A7D123EE6280069A745 /* JRSwizzle.m */,
 				096D2A7E123EE6280069A745 /* NSWindow+Fullscreen.h */,
@@ -199,7 +194,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				096D2A81123EE6280069A745 /* Fullscreen.mm in Sources */,
-				096D2A82123EE6280069A745 /* FullscreenWindow.m in Sources */,
 				096D2A83123EE6280069A745 /* JRSwizzle.m in Sources */,
 				096D2A84123EE6280069A745 /* NSWindow+Fullscreen.m in Sources */,
 			);

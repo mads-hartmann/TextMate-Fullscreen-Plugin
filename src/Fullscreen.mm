@@ -1,5 +1,4 @@
 #import "Fullscreen.h"
-#import "FullscreenWindow.h"
 #import "TextMate.h"
 #import "JRSwizzle.h"
 
