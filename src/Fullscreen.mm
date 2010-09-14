@@ -89,7 +89,7 @@ static Fullscreen *sharedInstance = nil;
 		NSRect newFrame = [mainWindow frame];
 		newFrame.size.height = newFrame.size.height - 20;
 		
-		[mainWindow setFrame:newFrame display:YES animate:YES];
+		[mainWindow setFrame:oldSize display:YES animate:YES];
 
 		[NSMenu setMenuBarVisible:YES];
 		
@@ -97,6 +97,8 @@ static Fullscreen *sharedInstance = nil;
 	}
 	else {
 		fullscreen = true;
+		
+		oldSize = [mainWindow frame];
 		
 		[NSMenu setMenuBarVisible:NO];
 		

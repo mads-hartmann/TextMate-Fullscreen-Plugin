@@ -18,6 +18,7 @@
 	NSMenu* windowMenu;
 	NSMenuItem* toggleFullscreen;
 	BOOL fullscreen;
+	NSRect oldSize;
 }
 
 @property(retain) NSWindowController* lastWindowController;
