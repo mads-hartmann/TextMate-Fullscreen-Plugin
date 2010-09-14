@@ -57,7 +57,7 @@ static Fullscreen *sharedInstance = nil;
 													   action:@selector(toggleFullscreen:) 
 												keyEquivalent:@""];
 		
-		[toggleFullscreen setKeyEquivalent:@"."];
+		[toggleFullscreen setKeyEquivalent:@"f"];
 		[toggleFullscreen setKeyEquivalentModifierMask:NSCommandKeyMask|NSControlKeyMask|NSAlternateKeyMask];
 		[toggleFullscreen setTarget:self];
 		[windowMenu insertItem:toggleFullscreen atIndex:index ? index-1 : 0];
