@@ -52,13 +52,15 @@
 					PBXFileDataSource_Warnings_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 306112771;
-			PBXWorkspaceStateSaveDate = 306112771;
+			PBXPerProjectTemplateStateSaveDate = 306139806;
+			PBXWorkspaceStateSaveDate = 306139806;
 		};
 		perUserProjectItems = {
-			09A873D4123EE924008FED77 /* PBXTextBookmark */ = 09A873D4123EE924008FED77 /* PBXTextBookmark */;
-			09A873D5123EE924008FED77 /* PBXBookmark */ = 09A873D5123EE924008FED77 /* PBXBookmark */;
-			09A873D6123EE924008FED77 /* PBXTextBookmark */ = 09A873D6123EE924008FED77 /* PBXTextBookmark */;
+			09A873D4123EE924008FED77 = 09A873D4123EE924008FED77 /* PBXTextBookmark */;
+			09A873D5123EE924008FED77 = 09A873D5123EE924008FED77 /* PBXBookmark */;
+			09A873DA123EE96C008FED77 = 09A873DA123EE96C008FED77 /* PBXTextBookmark */;
+			09D33BCA123F52C600E4F646 /* PBXTextBookmark */ = 09D33BCA123F52C600E4F646 /* PBXTextBookmark */;
+			09D33BE8123F531600E4F646 /* PBXTextBookmark */ = 09D33BE8123F531600E4F646 /* PBXTextBookmark */;
 		};
 		sourceControlManager = 096D28C6123ED1E80069A745 /* Source Control */;
 		userBuildSettings = {
@@ -88,7 +90,7 @@
 	096D2A79123EE6280069A745 /* Fullscreen.mm */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {998, 1469}}";
-			sepNavSelRange = "{22, 0}";
+			sepNavSelRange = "{2002, 0}";
 			sepNavVisRange = "{1590, 882}";
 		};
 	};
@@ -106,12 +108,32 @@
 		isa = PBXBookmark;
 		fRef = 096D2A79123EE6280069A745 /* Fullscreen.mm */;
 	};
-	09A873D6123EE924008FED77 /* PBXTextBookmark */ = {
+	09A873DA123EE96C008FED77 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = 096D2A79123EE6280069A745 /* Fullscreen.mm */;
 		name = "Fullscreen.mm: 1";
 		rLen = 0;
 		rLoc = 22;
+		rType = 0;
+		vrLen = 882;
+		vrLoc = 1590;
+	};
+	09D33BCA123F52C600E4F646 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 096D2A79123EE6280069A745 /* Fullscreen.mm */;
+		name = "Fullscreen.mm: 86";
+		rLen = 0;
+		rLoc = 2002;
+		rType = 0;
+		vrLen = 882;
+		vrLoc = 1590;
+	};
+	09D33BE8123F531600E4F646 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 096D2A79123EE6280069A745 /* Fullscreen.mm */;
+		name = "Fullscreen.mm: 86";
+		rLen = 0;
+		rLoc = 2002;
 		rType = 0;
 		vrLen = 882;
 		vrLoc = 1590;
