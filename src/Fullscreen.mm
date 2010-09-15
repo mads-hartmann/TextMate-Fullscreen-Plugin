@@ -30,8 +30,7 @@ static Fullscreen *sharedInstance = nil;
 		
 	}
 	
-	fullscreen = false;
-	
+	iVars = [[NSMutableDictionary alloc] init];
 	sharedInstance = self;
 	
 	return self;
@@ -64,6 +63,24 @@ static Fullscreen *sharedInstance = nil;
 	}
 }
 
+- (NSMutableDictionary*)getIVarsFor:(id)sender
+{
+	if (iVars == nil)
+		return nil;
+	id x = [iVars objectForKey:[NSNumber numberWithInt:[sender hash]]];
+	if (x == nil) {
+		NSMutableDictionary* iVarHolder = [NSMutableDictionary dictionaryWithCapacity:2];
+		[iVars setObject:iVarHolder forKey:[NSNumber numberWithInt:[sender hash]]];
+		return iVarHolder;
+	}
+	return (NSMutableDictionary*)x;
+}
+
+- (void)removeIvarFor:(id)sender
+{
+	[iVars removeObjectForKey:[NSNumber numberWithInt:[sender hash]]];
+}
+
 - (void)uninstallMenuItem
 {
 	[windowMenu removeItem:toggleFullscreen];
@@ -82,23 +99,29 @@ static Fullscreen *sharedInstance = nil;
 {
 	
 	NSWindow *mainWindow = [lastWindowController window];
+	NSMutableDictionary *controllerIVars = [self getIVarsFor:lastWindowController];
 	[mainWindow retain];
+		
+	NSNumber *fullscreen = [controllerIVars objectForKey:@"fullscreen"];
+	NSRect oldSize = [[controllerIVars objectForKey:@"oldSize"] rectValue];
 	
-	if (fullscreen)
+	NSLog(@"%i",fullscreen);
+	
+	if ([fullscreen intValue] == 1)
 	{
 		NSRect newFrame = [mainWindow frame];
 		newFrame.size.height = newFrame.size.height - 20;
 		
 		[mainWindow setFrame:oldSize display:YES animate:YES];
 
-		[NSMenu setMenuBarVisible:YES];
+		[controllerIVars setObject:[NSNumber numberWithBool:false] forKey:@"fullscreen"];
 		
-		fullscreen = false;
+		if ([self noFullsizeWindows])
+			[NSMenu setMenuBarVisible:YES];
 	}
 	else {
-		fullscreen = true;
-		
-		oldSize = [mainWindow frame];
+		[controllerIVars setObject:[NSNumber numberWithBool:true] forKey:@"fullscreen"];
+		[controllerIVars setObject:[NSValue valueWithRect:[mainWindow frame]] forKey:@"oldSize"];
 		
 		[NSMenu setMenuBarVisible:NO];
 		
@@ -108,7 +131,19 @@ static Fullscreen *sharedInstance = nil;
 	}
 	
 	[mainWindow release];
-	
+}
+
+- (BOOL)noFullsizeWindows
+{
+	BOOL b = YES;
+	for (NSString *key in [iVars allKeys]) {
+		NSMutableDictionary *ciVars = [iVars objectForKey:key];
+		NSNumber *fullscreen = [ciVars objectForKey:@"fullscreen"];
+		NSLog(@"loop");	
+		if ([fullscreen intValue] == 1)
+			b = NO;
+	}
+	return b;
 }
 
 @end

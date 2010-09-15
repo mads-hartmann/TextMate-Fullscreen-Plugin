@@ -13,17 +13,15 @@
 
 - (void)Fullscreen_becomeMainWindow
 {
-	NSLog(@"becameMainWindow");
 	[self Fullscreen_becomeMainWindow];
 	NSWindowController* controller = [self windowController];
-	NSLog(@"w: %@",controller);
 	[[Fullscreen instance] setLastWindowController:controller];
 }
 
 - (void)Fullscreen_close
 {
-	NSLog(@"close");
 	[[Fullscreen instance] setLastWindowController:nil];
+	[[Fullscreen instance] removeIvarFor:[self windowController]];
 	[self Fullscreen_close];
 }
 

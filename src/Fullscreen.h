@@ -17,8 +17,10 @@
 	NSWindowController* lastWindowController;
 	NSMenu* windowMenu;
 	NSMenuItem* toggleFullscreen;
-	BOOL fullscreen;
-	NSRect oldSize;
+	
+	// hacky way to provide the controllers 
+	// with instance variables.
+	NSMutableDictionary* iVars;
 }
 
 @property(retain) NSWindowController* lastWindowController;
@@ -30,5 +32,8 @@
 - (void)installMenuItem;
 - (void)uninstallMenuItem;
 - (void)toggleFullscreen:(id)sender;
+- (BOOL)noFullsizeWindows;
+- (void)removeIvarFor:(id)sender;
+- (NSMutableDictionary*)getIVarsFor:(id)sender;
 
 @end
