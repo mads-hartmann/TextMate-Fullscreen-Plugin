@@ -20,8 +20,8 @@
 
 - (void)Fullscreen_close
 {
-	[[Fullscreen instance] setLastWindowController:nil];
 	[[Fullscreen instance] removeIvarFor:[self windowController]];
+	[[Fullscreen instance] setLastWindowController:nil];
 	[self Fullscreen_close];
 }
 

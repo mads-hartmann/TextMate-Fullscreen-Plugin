@@ -27,7 +27,6 @@ static Fullscreen *sharedInstance = nil;
 		
 		[OakWindow jr_swizzleMethod:@selector(becomeMainWindow) withMethod:@selector(Fullscreen_becomeMainWindow) error:NULL];
 		[OakWindow jr_swizzleMethod:@selector(close) withMethod:@selector(Fullscreen_close) error:NULL];
-		
 	}
 	
 	iVars = [[NSMutableDictionary alloc] init];
@@ -40,6 +39,7 @@ static Fullscreen *sharedInstance = nil;
 - (void)dealloc
 {
 	[self uninstallMenuItem];
+	[iVars release];
 	[super dealloc];
 }
 
@@ -61,6 +61,17 @@ static Fullscreen *sharedInstance = nil;
 		[toggleFullscreen setTarget:self];
 		[windowMenu insertItem:toggleFullscreen atIndex:index ? index-1 : 0];
 	}
+}
+
+- (void)setLastWindowController:(NSWindowController *)windowController
+{
+//	if (lastWindowController != nil) {
+//		[lastWindowController release];
+//	}
+	lastWindowController = windowController;
+	if ([self noFullsizeWindows])
+		[NSMenu setMenuBarVisible:YES];
+	
 }
 
 - (NSMutableDictionary*)getIVarsFor:(id)sender
